@@ -3,9 +3,17 @@ const inputRef = document.querySelector("input");
 const messRef = document.querySelector("textarea");
 window.addEventListener("load", () => {
     const startData = JSON.parse(localStorage.getItem("feedback-form-state"));
-    inputRef.value = `${startData.email}`;
-    messRef.value = `${startData.message}`;
-})
+    if (!inputRef.value) {
+        inputRef.value = "";
+    } else {
+        inputRef.value = `${startData.email}`;
+    };
+    if (!messRef.value) {
+        messRef.value = "";
+    } else {
+        messRef.value = `${startData.message}`;
+    }
+});
 
 
 formRef.addEventListener("submit", (event) => {

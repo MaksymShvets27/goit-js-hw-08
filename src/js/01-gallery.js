@@ -27,7 +27,10 @@ const ulArr = galleryItems.map((item) => {
 galleryRef.append(...ulArr);
 
 
-const basicLightbox = new SimpleLightbox('.gallery a', {});
+const basicLightbox = new SimpleLightbox('.gallery a', {
+    close: false,
+    overlayOpacity: 1
+});
 
 
 

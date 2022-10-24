@@ -2,10 +2,8 @@ const formRef = document.querySelector(".feedback-form");
 const inputRef = document.querySelector("input");
 const messRef = document.querySelector("textarea");
 window.addEventListener("load", () => {
-    if (!localStorage.getItem("feedback-form-state")) {
-        return
-    } else {
-        const startData = JSON.parse(localStorage.getItem("feedback-form-state"));
+    const startData = JSON.parse(localStorage.getItem("feedback-form-state"));
+    if (startData) {
         inputRef.value = `${startData.email}`;
         messRef.value = `${startData.message}`;
     }

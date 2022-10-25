@@ -29,7 +29,8 @@ galleryRef.append(...ulArr);
 
 const basicLightbox = new SimpleLightbox('.gallery a', {
     close: false,
-    overlayOpacity: 1
+    overlayOpacity: 1,
+    captionsData: "alt",
 });
 
 

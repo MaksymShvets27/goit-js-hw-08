@@ -9,17 +9,18 @@ window.addEventListener("load", () => {
     }
 })
 
-
-formRef.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const { email } = event.target.elements;
-    const { message } = event.target.elements;
+formRef.addEventListener("input", () => {
     const data = {
-        email: email.value,
-        message: message.value
+        email: inputRef.value,
+        message: messRef.value,
     }
 
     localStorage.setItem("feedback-form-state", JSON.stringify(data));
+});
+
+formRef.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     formRef.reset();
     console.log(localStorage.getItem("feedback-form-state"));
 }
